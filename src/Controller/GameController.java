@@ -26,41 +26,7 @@ public class GameController {
 	
 
 
-	public void run() {	
-		
-		boolean z = false;
-
-		
-
-		while(z == false) {
-			boolean x = this.view.getValidLoginStatus();
-			if(x==true) {
-				
-				this.view.constructGame();
-				z=true;
-			}else{
-				
-				this.view.displayError("Invalid Login!");;
-			}
-		}
-		
-
-
-		boolean carryOn= true;
-		
-		while(carryOn) {
-			runOneRound();
-			
-			if(nextGame == false) {
-				carryOn = false;
-			}
-		}
-		this.view.ShowPlayerNameAndLeftOverChips(this.player);
-		this.view.ends();
-		this.view.ShowExitGame("Thanks For playing, Bye for now!");
-
-		
-	}
+	
 	
 	public void runOneRound() {
 		
@@ -111,12 +77,12 @@ public class GameController {
 			
 			int whoCanCall = this.dealer.determineWhichCardRankHigher(dealer.getLastCard(), player.getLastCard());
 			
-			if(whoCanCall==1) {//dealer call
+			if(whoCanCall==1) {
 				
 				this.view.displayDealerRoundWinner();
 				
 				int chipsToBet = this.view. getDealerCallBetChips();
-				//ask player want to follow?
+
 				char decision = this.view.askFollow("Follow");
 
 				if(decision =='y') {
@@ -132,11 +98,11 @@ public class GameController {
 				
 					break;
 				}
-			}else {//player call
+			}else {
 
 				this.view.displayPlayerRoundWinner();
 				
-				if(round==1) {//round 1 player cannot quit
+				if(round==1) {
 					int input = 0;
 					boolean valid = false;
 					while (!valid) {
@@ -148,7 +114,7 @@ public class GameController {
 							}
 							valid = true;
 						} catch (NumberFormatException e) {
-							this.view.displayError("Must be an INTEGER!");
+							this.view.displayError("INVALID!");
 						}catch(IllegalArgumentException x){
 							this.view.displayError("Enter a valid bet amount");
 						}
@@ -195,7 +161,7 @@ public class GameController {
 		this.view.showFinalCard();
 		
 		
-		//check who win
+	
 		if(playerQuit) {
 			this.view.ShowPlayerNameAndLeftOverChips(this.player);
 			this.view.ShowPlayerQuit();
@@ -231,5 +197,40 @@ public class GameController {
 
 	}
 	
+public void run() {	
+		
+		boolean z = false;
+
+		
+
+		while(z == false) {
+			boolean x = this.view.getValidLoginStatus();
+			if(x==true) {
+				
+				this.view.constructGame();
+				z=true;
+			}else{
+				
+				this.view.displayError("Invalid Login!");;
+			}
+		}
+		
+
+
+		boolean carryOn= true;
+		
+		while(carryOn) {
+			runOneRound();
+			
+			if(nextGame == false) {
+				carryOn = false;
+			}
+		}
+		this.view.ShowPlayerNameAndLeftOverChips(this.player);
+		this.view.ends();
+		this.view.ShowExitGame("Thanks For playing, Bye for now!");
+
+		
+	}
 	
 }

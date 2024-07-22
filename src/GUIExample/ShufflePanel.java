@@ -16,14 +16,15 @@ public class ShufflePanel extends JPanel {
         setLayout(null);
         
         img1 = new ImageIcon("images/shuffle.gif");
-
+        
+        
         img = new JLabel(img1);
         img.setBounds(650, 200, img1.getIconWidth(), img1.getIconHeight());
 		add(img);
 
         txt = new JLabel("shuffling the cards ......");
-        txt.setFont(new Font("Comic Sans MS", Font.PLAIN, 32));
-        txt.setBounds(700, 500, 500 ,100 );
+        txt.setFont(new Font("Comic Sans MS", Font.BOLD, 32));
+        txt.setBounds(680, 500, 500 ,100 );
 		add(txt);
 		
 		cardBackImage = new ImageIcon("images/back.png");
@@ -44,8 +45,8 @@ public class ShufflePanel extends JPanel {
 	    repaint();
 	  }
 	
-	  public void paintComponent(Graphics g) {
-	    super.paintComponent(g);
+	  public void paint(Graphics g) {
+	    super.paint(g);
 	
 	    
 	    int x = 300;

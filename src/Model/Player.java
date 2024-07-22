@@ -49,12 +49,12 @@ public class Player extends User{
 	}
 	
 	
-	public static void main(String[] args) {
-		Player player = new Player("IcePeak","A",100);
-		System.out.println(player.getChips());
-		player.deductChips(10);
-		System.out.println(player.getChips());
-		player.addChips(20);
-		System.out.println(player.getChips());
-	}
+//	public static void main(String[] args) {
+//		Player player = new Player("IcePeak","A",100);
+//		System.out.println(player.getChips());
+//		player.deductChips(10);
+//		System.out.println(player.getChips());
+//		player.addChips(20);
+//		System.out.println(player.getChips());
+//	}
 }

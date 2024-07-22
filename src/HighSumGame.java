@@ -2,7 +2,7 @@ import Controller.*;
 import Model.*;
 import View.*;
 
-public class GUIExample {
+public class HighSumGame {
 
   private Dealer dealer;
   private Player player;
@@ -10,9 +10,8 @@ public class GUIExample {
   private GameController gc;
 
 
-  //testing of game table UI
-  public GUIExample() {
-    player = new Player("gg", "gg", 1000);
+  public HighSumGame() {
+    player = new Player("gg", "gg", 700);
     dealer = new Dealer();
     this.view = new ViewController(this.dealer, this.player);
 
@@ -24,6 +23,6 @@ public class GUIExample {
   }
 
   public static void main(String[] args) {
-    new GUIExample().run();
+    new HighSumGame().run();
   }
 }

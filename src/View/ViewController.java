@@ -14,7 +14,6 @@ public class ViewController {
 	private Player player;
 	
 	
-///////////////////////////////////GUI////////////////////////////////////////
 
 	public ViewController(Dealer dealer, Player player) {
 		this.player = player;
@@ -230,7 +229,6 @@ public class ViewController {
 
 
 
-///////////////////////Console/////////////////////////////////////////////////////////////
 	public void ShowPlayerNameAndChips(Player player) {
 		
 		System.out.println(player.getLoginName()+", You have "+player.getChips()+" chips");
